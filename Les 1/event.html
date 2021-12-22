@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+
+<body>
+
+    <button id=google>Klik mij</button>
+    <p id=button_google></p>
+    <button>Dont go to google</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button#google").click(function() {
+  		        window.location="https://www.google.com";
+            });
+            $('button#google').mouseover(function() {
+                $('p#button_google').html('Go to google');
+            })
+            $('button#google').mouseleave(function() {
+                $('p#button_google').html('');
+            })
+        });
+    </script>
+
+</body>
+
+</html>
