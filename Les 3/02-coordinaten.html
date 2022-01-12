@@ -8,10 +8,13 @@
 	</head>
 
 	<body>
+		<p>Klik in het document en kijk in de console om de x en y coordinaten te zien</p>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				// ...
+				$(document).on('click', function(event){
+					console.log('U hebt geklikt op ' + event.pageX + " en " + event.pageY)
+				})
 			});
 		</script>
 	</body>

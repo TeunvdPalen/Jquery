@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Template</title>
+		<style>
+			div {
+				margin:10px;
+				padding:12px;
+				border:2px solid #666;
+				width:60px;
+			}
+			.B {
+				background-color: blue;
+			}
+			.G {
+				background-color: green;
+			}
+			.R {
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="B">Blauw</div>
+		<div class="G">Groen</div>
+		<div class="R">Rood</div>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('div').on('click', function(event){
+					console.log("Event type is : " + event.type)
+					console.log("Target is : " + event.target)
+					console.log("Target html is : "+ event.target.innerText)
+				})
+				.on('mouseenter', function(){
+					$(this).width(100);
+				})
+				.on('mouseleave', function(){
+					$(this).width(60);
+				})
+			});
+		</script>
+	</body>
+</html>
