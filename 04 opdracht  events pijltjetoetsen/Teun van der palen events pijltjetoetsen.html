@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Template</title>
+		<style>
+			.kader {
+				border: 9px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label> Voornaam </label>
+		<br />
+		<input type="text" id="voornaam" name="voornaam" />
+		<br />
+		<br />
+		<label> Achternaam </label>
+		<br />
+		<input type="text" id="achternaam" name="achternaam" />
+		<div id="key"></div>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("input")
+					.on("mouseenter", function () {
+						$(this).addClass("kader");
+					})
+					.on("mouseout", function () {
+						$(this).removeClass("kader");
+					});
+
+				switch (on("keyup")) {
+					case (event.which = 37):
+						$("div#key").html(Keylinks);
+						break;
+					case (event.which = 38):
+						Keyomhoog;
+						break;
+					case (event.which = 39):
+						Keyrechts;
+						break;
+					case (event.which = 40):
+						Keyonder;
+						break;
+				}
+			});
+		</script>
+	</body>
+</html>

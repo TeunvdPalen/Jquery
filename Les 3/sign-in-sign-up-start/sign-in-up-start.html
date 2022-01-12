@@ -111,6 +111,18 @@
 					$(idToShow).show(400).siblings(".forms").hide(400);
 					event.preventDefault();
 				});
+
+				$("#sign_up_confirmation").on("keyup", function () {
+					if ($("#wrong")) {
+						$("#wrong").remove();
+					}
+
+					if ($(this).val() != $("#sign_up_password").val()) {
+						$(this).addClass("error").after('<span id="wrong">komt niet overeen</span>');
+					} else {
+						$(this).removeClass("error");
+					}
+				});
 			});
 		</script>
 	</body>
