@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sterrenbeeld</title>
+		<style>
+			#error_maand,
+			#error_dag {
+				color: red;
+				display: none;
+			}
+			.tooltip {
+				margin: 8px;
+				padding: 8px;
+				border: 1px solid black;
+				background-color: lightblue;
+				position: absolute;
+				z-index: 2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label>
+			Maand: <br />
+			<input type="text" name="maand" id="maand" size="25" placeholder="Vul hier de geboortemaand in" />
+			<span id="maand">help?</span>
+		</label>
+		<br />
+		<span id="error_maand">Ongeldige maand</span>
+		<br />
+		<label id="dag">
+			Dag: <br />
+			<input type="text" name="dag" id="dag" size="25" placeholder="Vul hier je geboortedag in" />
+			<span id="dag">help?</span>
+		</label>
+		<br />
+		<span id="error_dag">Ongeldige dag</span>
+		<br />
+		<button>Verzenden</button>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$error_maand = $("span#error_maand");
+				$error_dag = $("span#error_dag");
+				$input_maand = $("input#maand");
+				$input_dag = $("input#dag");
+				$maandok = false;
+				$dagok = false;
+
+				$("input")
+					.on("focus", function () {
+						$temporary = $(this).attr("placeholder");
+						$(this).attr("placeholder", "");
+					})
+					.on("focusout", function () {
+						$(this).attr("placeholder", $temporary);
+					});
+
+				$("span#maand")
+					.on("mouseenter", function showTooltip() {
+						$('<div class="tooltip">Vul hier je geboorte maand in.</div>').appendTo("body");
+					})
+					.on("mouseleave", function hideTooltip() {
+						$("div.tooltip").remove();
+					})
+					.on("mousemove", function changeTooltipPos(event) {
+						let tooltipX = event.pageX - 8;
+						let tooltipY = event.pageY + 8;
+						$("div.tooltip").css({ top: tooltipY, left: tooltipX });
+					});
+
+				$("span#dag")
+					.on("mouseenter", function showTooltip() {
+						$('<div class="tooltip">Vul hier je geboorte dag in.</div>').appendTo("body");
+					})
+					.on("mouseleave", function hideTooltip() {
+						$("div.tooltip").remove();
+					})
+					.on("mousemove", function changeTooltipPos(event) {
+						let tooltipX = event.pageX - 8;
+						let tooltipY = event.pageY + 8;
+						$("div.tooltip").css({ top: tooltipY, left: tooltipX });
+					});
+
+				$input_maand.on("blur", function (event) {
+					if (parseInt($(this).val()) > 12 && parseInt($(this).val()) < 1) {
+						$error_maand.show();
+						$maandok = false;
+					} else {
+						$error_maand.hide();
+						$maandok = true;
+					}
+				});
+				$input_dag.on("blur", function (event) {
+					if (parseInt($(this).val()) > 31 && parseInt($(this).val()) < 1) {
+						$error_dag.show();
+						$dagok = false;
+					} else {
+						$error_dag.hide();
+						$dagok = true;
+					}
+				});
+
+				$("button").on("click", function () {
+					if (($maandok = true) && (dagok = true)) {
+						if (
+							parseInt($input_maand.val()) == 1 &&
+							parseInt($input_dag.val()) > 18 &&
+							parseInt($input_dag.val() < 32)
+						) {
+							console.log($dagok);
+							$(this).after(
+								'<p>U bent een Waterman</p><img src="https://loremflickr.com/320/240/auqarius" alt="image" />'
+							);
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
