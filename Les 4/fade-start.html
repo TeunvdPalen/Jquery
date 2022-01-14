@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Template</title>
+		<style></style>
+	</head>
+
+	<body>
+		<div id="foto">
+			<img src="https://picsum.photos/200/300" />
+		</div>
+		<input id="knop" type="button" value="fadeOut" />
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				let $knop = $("#knop");
+				$knop.on("click", function () {
+					$("#foto").fadeToggle(1000, function () {
+						if ($knop.val() == "fadeOut") {
+							$knop.val("fadeIn");
+						} else {
+							$knop.val("fadeOut");
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
