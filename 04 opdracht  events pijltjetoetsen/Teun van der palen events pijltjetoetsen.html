@@ -21,33 +21,37 @@
 		<label> Achternaam </label>
 		<br />
 		<input type="text" id="achternaam" name="achternaam" />
+		<br />
+		<br />
 		<div id="key"></div>
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
 			$(document).ready(function () {
 				$("input")
-					.on("mouseenter", function () {
+					.on("focus", function () {
 						$(this).addClass("kader");
 					})
-					.on("mouseout", function () {
+					.on("focusout", function () {
 						$(this).removeClass("kader");
 					});
 
-				switch (on("keyup")) {
-					case (event.which = 37):
-						$("div#key").html(Keylinks);
-						break;
-					case (event.which = 38):
-						Keyomhoog;
-						break;
-					case (event.which = 39):
-						Keyrechts;
-						break;
-					case (event.which = 40):
-						Keyonder;
-						break;
-				}
+				$("body").on("keyup", function (event) {
+					switch (event.keyCode) {
+						case 37:
+							$("div#key").append("Keylinks<br>");
+							break;
+						case 38:
+							$("div#key").append("Keyomhoog<br>");
+							break;
+						case 39:
+							$("div#key").append("Keyrechts<br>");
+							break;
+						case 40:
+							$("div#key").append("Keyonder<br>");
+							break;
+					}
+				});
 			});
 		</script>
 	</body>
