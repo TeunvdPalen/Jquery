@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <style>
+        .border {
+            border: #993333 dashed 2px;
+        }
+
+        #shopping-cart {
+            position: relative;
+            border: #000000 solid 2px;
+            padding: 6px;
+            min-height: 200px;
+            width: 570px;
+        }
+
+        #kart-holder {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 120px;
+            height: auto;
+            padding: 6px;
+            font-family: verdana;
+            font-size: 12px;
+        }
+
+        #items-holder {
+            position: relative;
+            top: 0px;
+            left: 120px;
+            width: 450px;
+            height: auto;
+            padding: 6px;
+            font-family: verdana;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="shopping-cart">
+        <div id="kart-holder">
+            <center>
+                <img src="cart.jpg" id="cart">
+                <br /><span id="numItems">0</span> items in de winkelwagen.
+                <p>Totaal <span id="totalPrice">0</span>&nbsp;€.</p>
+            </center>
+        </div>
+        <div id="items-holder">
+            <center>
+                <h3>Sleep items in de winkelwagen</h3>
+            </center>
+            <div class="product" id="ban"><img src="banana.jpg" align="left"> Bananen <br />€
+                <span class="price">1.99</span>
+            </div><br><br>
+            <div class="product" id="app"><img src="apple.jpg" align="left"> Appel <br />€
+                <span class="price">0.99</span>
+            </div><br><br><br>
+            <div class="product" id="kiw"><img src="kiwi.jpg" align="left"> Kiwi <br />€
+                <span class="price">2.79</span>
+            </div><br><br>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".product").draggable({    /*Maak elke product sleepbaar*/
+                opacity: 0.3,
+                revert: "valid",       /*als .product losgelaten wordt op #cart, keert het sleepbare element terug naar zijn startpositie*/
+                delay: 200,        	/*tijd tussen klikken en mogelijkheid om te slepen, om verkeerd klikken te voorkomen*/
+                distance: 4,        	/*hoeveel pixels moet de muis bewegen na het klikken om het slepen actief te maken, om verkeerd klikken te voorkomen*/
+                helper: "clone"      /*een helper wordt gebruikt : een kopie van het origineel object*/
+            });
+            $("#cart").droppable({
+                accept: ".product",/*welke elementen accepteert de cart*/
+                activeClass: "border",/*class die actief wordt vanaf er iets accepteerbaar draggable gesleept wordt*/
+                drop: function (e, ui) {
+                    let $numItems = $("#numItems");
+                    let $totalPrice = $("#totalPrice");
+                    $numItems.text(new Number($numItems.text()) + 1);
+                    /*ui: bij een drop wordt automatisch een ui object aangemaakt, vergelijkbaar met het event object. Dit ui object bevat oa. een verwijzing naar welk object gesleept wordt (ui.draggable) new Number kan ook gedaan worden met een + dus bv: +($numItems.text()) */
+                    let id = $(ui.draggable).attr("id");
+                    /*ui.draggable = huidig element dat gesleept wordt*/
+                    let price = new Number($("#" + id + " .price").text());
+                    let newPrice = (new Number($totalPrice.text()) + price).toFixed(2);
+                    /*new Number om op te tellen, anders is het text*/
+                    $totalPrice.text(newPrice);
+                }
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
