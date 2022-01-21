@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/jquery-ui.min.css" />
+		<title>Template</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/jquery-ui.min.css">
-  <title>Template</title>
-</head>
+	<body>
+		<h1>The cosmopolitan chicken project</h1>
 
-<body>
-  <h1>The cosmopolitan chicken project</h1>
+		<div id="tabs">
+			<div id="tabs-1">
+				<img src="images/kip1.png" alt="kippen" />
+				---->
+				<img src="images/kip2.png" alt="kippen" />
+			</div>
+			<div id="tabs-2">
+				<img src="images/kip3.png" alt="kippen" />
+				---->
+				<img src="images/kip4.png" alt="kippen" />
+			</div>
+			<div id="tabs-3"></div>
+			<div id="tabs-4"></div>
+			<ul>
+				<li><a href="#tabs-1">Het oorspronkelijk koppel</a></li>
+				<li><a href="#tabs-2">Generatie 2</a></li>
+				<li><a href="#tabs-3">...</a></li>
+				<li><a href="#tabs-4">De cosmopolische kip</a></li>
+			</ul>
+		</div>
 
-  <div id="tabs">
-    <div id="tabs-1">
-      <img src="images/kip1.png" alt="kippen">
-      ---->
-      <img src="images/kip2.png" alt="kippen">
-    </div>
-    <div id="tabs-2">
-      <img src="images/kip3.png" alt="kippen">
-      ---->
-      <img src="images/kip4.png" alt="kippen">
-    </div>
-    <div id="tabs-3"> </div>
-    <div id="tabs-4"> </div>
-    <ul>
-      <li><a href="#tabs-1">Het oorspronkelijk koppel</a></li>
-      <li><a href="#tabs-2">Generatie 2</a></li>
-      <li><a href="#tabs-3">...</a></li>
-      <li><a href="#tabs-4">De cosmopolische kip</a></li>
-    </ul>
-  </div>
+		<h1>Wat was er eerst: het kip of het ei?</h1>
 
-  <h1>Wat was er eerst: het kip of het ei?</h1>
+		<div id="accordion">
+			<h2>Bevruchting</h2>
+			<div>
+				<p>Bevruchting van het ei.</p>
+			</div>
+			<h2>Leggen</h2>
+			<div>
+				<p>
+					Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at
+					aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+					suscipit faucibus urna.
+				</p>
+			</div>
+			<h2>Uitkomen</h2>
+			<div>
+				<p>Uitkomen van het ei.</p>
+				<ul>
+					<li>Bruin ei</li>
+					<li>Wit ei</li>
+					<li>Gespikkeld ei</li>
+				</ul>
+			</div>
+			<h2>Kringloop</h2>
+			<div>
+				<img src="images/wie-eerst.gif" alt="wie eerst" />
+			</div>
+		</div>
 
-  <div id="accordion">
-    <h2>Bevruchting</h2>
-    <div>
-      <p>Bevruchting van het ei.</p>
-    </div>
-    <h2>Leggen</h2>
-    <div>
-      <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at
-        aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-        suscipit faucibus urna. </p>
-    </div>
-    <h2>Uitkomen</h2>
-    <div>
-      <p>Uitkomen van het ei.</p>
-      <ul>
-        <li>Bruin ei</li>
-        <li>Wit ei</li>
-        <li>Gespikkeld ei</li>
-      </ul>
-    </div>
-    <h2>Kringloop</h2>
-    <div>
-      <img src="images/wie-eerst.gif" alt="wie eerst">
-    </div>
-  </div>
+		<script src="js/jquery-3.6.0.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
 
-  <script src="js/jquery-3.6.0.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$("#accordion").accordion({
+					icons: { header: "ui-icon-plus", activeHeader: "ui-icon-triangle-1-s" },
+					collapsible: true,
+					active: false,
+				});
 
-  <script>
-    $(document).ready(function () {
-      $("#accordion").accordion({
-        icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-triangle-1-s" },
-        collapsible: true,
-        active: false,
-      });
-
-      $("#tabs").tabs({
-        disabled: [2, 3],
-        hide: { effect: "drop", duration: 500 },
-        show: { effect: "drop", duration: 500 }
-      });
-    });
-  </script>
-</body>
-
+				$("#tabs").tabs({
+					disabled: [2, 3],
+					hide: { effect: "drop", duration: 500 },
+					show: { effect: "drop", duration: 500 },
+				});
+			});
+		</script>
+	</body>
 </html>
