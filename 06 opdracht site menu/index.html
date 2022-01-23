@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>animeer site menu</title>
+  <style>
+    div#menu {
+      width: 150px;
+      left: -180px;
+      position: absolute;
+      z-index: 100;
+    }
+
+    div#menu ul li {
+      margin-bottom: 1px;
+      position: relative;
+      float: left;
+      background-color: #00293E;
+    }
+
+    div#menu ul#unorderedList li a {
+      width: 150px;
+      height: 22px;
+      text-decoration: none;
+      display: block;
+      padding: 7px 10px 0 0;
+      text-align: right;
+      font-weight: bold;
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    #inhoud {
+      left: 50px;
+      position: absolute;
+      width: 500px;
+    }
+
+    #container {
+      display: none;
+    }
+
+    .activated {
+      color: red;
+    }
+
+    .disactivated {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <h1>jQuery rocks the menu!</h1>
+    <div id="menu">
+      <ul id="unorderedList">
+        <li><a href="#" class="activated">Menu 1</a></li>
+        <li><a href="#" class="disactivated">Menu 2</a></li>
+        <li><a href="#" class="disactivated">Menu 3</a></li>
+        <li><a href="#" class="disactivated">Menu 4</a></li>
+        <li><a href="#" class="disactivated">Menu 5</a></li>
+        <li><a href="#" class="disactivated">Menu 6</a></li>
+      </ul>
+    </div>
+    <div id="inhoud">
+      <div>
+        <h1>Inhoud 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+      <div>
+        <h1>Inhoud 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+      <div>
+        <h1>Inhoud 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+      <div>
+        <h1>Inhoud 4</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+      <div>
+        <h1>Inhoud 5</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+      <div>
+        <h1>Inhoud 6</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quod excepturi. Dicta earum
+          voluptatibus nostrum, autem sequi quis cumque dolor consequuntur expedita dolore ea, sunt natus,
+          necessitatibus nemo quos voluptatum perspiciatis voluptas amet? Mollitia nostrum facilis aut aperiam harum
+          sint delectus enim ducimus ab velit explicabo, iusto similique tempore esse incidunt impedit pariatur maiores
+          culpa commodi! Autem id illo voluptate pariatur error consequuntur earum, quos consequatur voluptatum debitis
+          dolorem ab dolor voluptates esse quas? Totam quia aperiam repellat expedita ipsam, reprehenderit similique
+          architecto natus commodi sapiente alias quam, facilis inventore doloribus! Fugit provident nisi ipsa labore
+          nihil quaerat eligendi porro?</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $li = $('li')
+      $inhoud_div = $('#inhoud > div')
+
+      $inhoud_div.first().slideDown("500").siblings("div").slideUp("500");
+      $('#container').fadeIn("slow")
+
+      $li.on('mouseenter', function () {
+        $(this).animate({ left: "100px" })
+        $(this).css("background-color", "green")
+      })
+
+      $li.on('mouseleave', function () {
+        $(this).animate({ left: "0px" })
+        $(this).css("background-color", "#00293E")
+      })
+
+      $li.on('click', function () {
+        $('a').addClass("disactivated").removeClass("activated")
+        $(this).children().addClass("activated").removeClass("disactivated")
+        $inhoud = $li.index(this)
+        console.log($inhoud)
+        $inhoud_div.eq($inhoud).slideDown("500").siblings("div").slideUp("500")
+      })
+
+    });
+  </script>
+</body>
+
+</html>
