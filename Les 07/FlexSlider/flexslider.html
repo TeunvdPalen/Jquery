@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="flexslider.css" type="text/css">
+  <title>Template</title>
+  <style>
+    .flexslider {
+      max-width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="flexslider">
+    <ul class="slides">
+      <li><img src="images/beach1.jpg" /></li>
+      <li><img src="images/beach2.jpg" /></li>
+      <li><img src="images/beach3.jpg" /></li>
+      <li><img src="images/beach4.jpg" /></li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="jquery.flexslider.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.flexslider').flexslider({
+        // itemWidth: 600, werkt voor 1 slide, niet voor slider breedte -> max-width
+        animation: "slide",
+        slideshowSpeed: 2500,
+        pauseOnAction: true,//Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+        pauseOnHover: true,
+        useCSS: true,//Boolean: Slider will use CSS3 transitions if available
+        touch: true,
+        directionNav: true
+      }
+      );
+    });
+  </script>
+</body>
+
+</html>

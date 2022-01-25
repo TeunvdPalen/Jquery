@@ -159,7 +159,7 @@
       })
 
       $li.on('click', function () {
-        $('a').addClass("disactivated").removeClass("activated")
+        $('a').addClass("disactivated")
         $(this).children().addClass("activated").removeClass("disactivated")
         $inhoud = $li.index(this)
         console.log($inhoud)
