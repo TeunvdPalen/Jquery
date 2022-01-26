@@ -1,67 +1,65 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Menu with jQuery</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	</head>
 
-<head>
-	<title>Menu with jQuery</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-</head>
+	<body>
+		<div class="container">
+			<ul id="menu">
+				<li>
+					<a href="#">
+						<i class="icon_about"></i>
+						<span class="title">About</span>
+						<span class="description">Learn about us and our services</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="icon_work"></i>
+						<span class="title">Work</span>
+						<span class="description">See our work and portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="icon_help"></i>
+						<span class="title">Help</span>
+						<span class="description">Talk to our support</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="icon_search"></i>
+						<span class="title">Search</span>
+						<span class="description">Search our website</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$a = $("a");
+				$i = $("i");
 
-<body>
-	<div class="container">
-		<ul id="menu">
-			<li>
-				<a href="#">
-					<i class="icon_about"></i>
-					<span class="title">About</span>
-					<span class="description">Learn about us and our services</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="icon_work"></i>
-					<span class="title">Work</span>
-					<span class="description">See our work and portfolio</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="icon_help"></i>
-					<span class="title">Help</span>
-					<span class="description">Talk to our support</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="icon_search"></i>
-					<span class="title">Search</span>
-					<span class="description">Search our website</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$a = $('a');
-			$i = $('i');
-
-
-			$('li')
-				.hover(
+				$("li").hover(
 					function () {
-						console.log("hover");
-						$(this).children($a).stop().animate({ bottom: "-20px" }, 250);
-						$(this).find($i).stop().animate({ top: "0px" }, 400);
+						animeer($(this).children($a), { bottom: "-20px" }, 250);
+						animeer($(this).find($i), { top: "0px" }, 400);
 					},
 					function () {
-						console.log("hover2")
-						$(this).children($a).stop().animate({ bottom: "-95px" }, 250);
-						$(this).find($i).stop().animate({ top: "50px" }, 400);
+						animeer($(this).children($a), { bottom: "-95px" }, 250);
+						animeer($(this).find($i), { top: "50px" }, 400);
 					}
 				);
-		});
-	</script>
-</body>
 
+				function animeer(selectie, propertyWaarde, speed) {
+					selectie.stop().animate(propertyWaarde), speed;
+				}
+			});
+		</script>
+	</body>
 </html>

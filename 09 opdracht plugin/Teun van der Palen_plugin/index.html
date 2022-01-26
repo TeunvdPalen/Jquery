@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="planetarium.css" />
+		<title>Template</title>
+		<style>
+			body {
+				padding: 0;
+				background: url(images/stars.jpg) repeat;
+			}
+
+			.container {
+				width: 1200px;
+				margin: 0 auto;
+				display: grid;
+				grid-row: auto;
+			}
+
+			.mercury,
+			.venus,
+			.earth,
+			.moon,
+			.mars,
+			.jupiter,
+			.saturn,
+			.uranus,
+			.neptune {
+				position: relative;
+				top: -5000px;
+			}
+
+			.sun {
+				position: relative;
+				top: -5350px;
+				left: -2750px;
+			}
+
+			.mercury {
+				left: -50px;
+			}
+
+			.venus {
+				left: -142px;
+			}
+
+			.earth {
+				left: -150px;
+			}
+
+			.mars {
+				left: -75px;
+			}
+
+			.jupiter {
+				left: -1650px;
+			}
+
+			.ptr-ring {
+				left: 1500px;
+			}
+
+			.saturn {
+				left: -1350px;
+			}
+
+			.uranus {
+				left: -600px;
+			}
+
+			.neptune {
+				left: -575px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div
+				class="sun planet"
+				data-ptr-autospin="60s"
+				data-ptr-size="5500x5500"
+				data-ptr-pattern="images/sun.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px"
+			></div>
+			<div
+				class="mercury planet"
+				data-ptr-autospin="58s"
+				data-ptr-size="100x100"
+				data-ptr-pattern="images/mercury.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -45px 50px rgba(0,0,0,0.5)"
+			></div>
+			<div
+				class="venus planet"
+				data-ptr-autospin="58s"
+				data-ptr-size="285x285"
+				data-ptr-pattern="images/venus.jpg"
+			></div>
+			<div
+				class="earth planet"
+				data-ptr-autospin="24s"
+				data-ptr-size="300x300"
+				data-ptr-pattern="images/earth_daymap.jpg"
+			></div>
+			<div
+				class="moon planet"
+				data-ptr-autospin="48s"
+				data-ptr-size="50x50"
+				data-ptr-pattern="images/moon.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -15px 50px rgba(0,0,0,0.5)"
+			></div>
+			<div
+				class="mars planet"
+				data-ptr-autospin="25s"
+				data-ptr-size="150x150"
+				data-ptr-pattern="images/mars.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -35px 50px rgba(0,0,0,0.5)"
+			></div>
+			<div
+				class="jupiter planet"
+				data-ptr-autospin="10s"
+				data-ptr-size="3300x3300"
+				data-ptr-pattern="images/jupiter.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -400px 50px rgba(0,0,0,0.5)"
+			></div>
+			<div
+				class="saturn planet"
+				data-ptr-autospin="10s"
+				data-ptr-size="2700x2700"
+				data-ptr-pattern="images/saturn.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -400px 50px rgba(0,0,0,0.5)"
+				data-ptr-ring="true"
+				data-ptr-ringcolor="burlywood"
+				data-ptr-ringangle="25deg"
+			></div>
+			<div
+				class="uranus planet"
+				data-ptr-autospin="17s"
+				data-ptr-size="1200x1200"
+				data-ptr-pattern="images/uranus.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -125px 50px rgba(0,0,0,0.5)"
+			></div>
+			<div
+				class="neptune planet"
+				data-ptr-autospin="16s"
+				data-ptr-size="1150x1150"
+				data-ptr-pattern="images/neptune.jpg"
+				data-ptr-glow="rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -125px 50px rgba(0,0,0,0.5)"
+			></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="jquery.planetarium.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".planet").planetarium({
+					angle: "0deg",
+					glow: "rgba(255, 255, 255, 0.34902) 0px 0px 50px, inset 0px -100px 50px rgba(0,0,0,0.5)",
+					float: false,
+					space: ".container",
+					ring: false,
+				});
+			});
+		</script>
+	</body>
+</html>
