@@ -1,0 +1,99 @@
+Skrollr voor het wiel en schaduw  
+
+<script type="text/javascript" src="assets/js/skrollr.min.js"></script>
+
+	<img class="img-tire-shadow" src="assets/img/sec-02-tire-shadow.png" data-0="opacity:1; top:-9%; left:100%;" data-900="left:-55%;" data-1100="" data-1600="opacity:0; top:50%;" />
+	<img class="img-tire" src="assets/img/sec-02-tire.png" data-0="opacity:1; top:-9%; left:100%; transform:rotate(360deg);" data-900="left:-55%; transform:rotate(0deg);" data-1100="" data-1600="opacity:0; top:50%;" />
+
+
+
+https://google-analytics.com/ga.js voor de dia
+
+	<div class="flexslider1" data-500="opacity:0; top:400px;" data-800="opacity:1; top:100px;" data-1600="">
+			<ul class="slides">
+					<li class="first">
+							<h1>Experience the LS journey</h1>
+							<p>Since the first LS was launched in 1989, Lexus has never slowed in its
+									<br />relentless pursuit of perfection.</p>
+							<p>Each LS generation set new industry standards and showcased
+									<br />class-leading excellence.</p>
+					</li>
+					<li>
+							<h1 class="year">1989</h1>
+							<img class="car" src="assets/img/sec-02-car-1989.png" />
+							<h3>LS 400</h3>
+							<p>It displayed superb engine performance and gained global admiration and approval. This was a level of design, performance and quality that no other vehicle could match up to.</p>
+					</li>
+					<li>
+							<h1 class="year">1994</h1>
+							<img class="car" src="assets/img/sec-02-car-1994.png" />
+							<h3>LS 400</h3>
+							<p>The bar was raised yet again. Delivering remarkable cabin quietness and an effortlessly smooth drive, the second-generation LS was the best luxury sedan of its time.</p>
+					</li>
+					<li>
+							<h1 class="year">2000</h1>
+							<img class="car" src="assets/img/sec-02-car-2000.png" />
+							<h3>LS 430</h3>
+							<p>Every detail in the third-generation LS reflected fine craftsmanship and engineering.
+									<br />With the best of everything in a luxury vehicle, it outshone the competition.</p>
+					</li>
+					<li>
+							<h1 class="year">2006</h1>
+							<img class="car" src="assets/img/sec-02-car-2006.png" />
+							<h3>LS 460</h3>
+							<p>The fourth-generation LS showcased breakthroughs in safety and engineering to enhance comfort, convenience and performance.</p>
+					</li>
+					<li>
+							<h1 class="year">2007</h1>
+							<img class="car" src="assets/img/sec-02-car-2007.png" />
+							<h3>LS 600h</h3>
+							<p>The Luxury Hybrid brought together two seemingly contrasting notions. It achieved remarkable acceleration, yet minimized environmental impact.</p>
+					</li>
+					<li class="last">
+							<h1 class="year">2013</h1>
+							<span class="video-shadow"></span>
+							<a class="btn-video-journey" href="javascript:;"></a>
+							<h3>The new LS</h3>
+							<p>Combining absolute opulence and industry-leading technology, the Lexus flagship sedan takes a bold step forward.</p>
+					</li>
+			</ul>
+	</div>
+
+
+
+voor de timeline
+	div class="timeline-wrapper" data-500="opacity:0; top:640px;" data-800="opacity:1;" data-1600="">
+			<div id="timeline-bar"></div>
+			<div id="timeline-bar-current"></div>
+			<ul id="timeline-years">
+					<li class="hidden"><a href="javascript:;">Start</a>
+					</li>
+					<li class="y-1989"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','1989_241212','']);">1989</a>
+					</li>
+					<li class="y-1994"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','1994_241212','']);">1994</a>
+					</li>
+					<li class="y-2000"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','2000_241212','']);">2000</a>
+					</li>
+					<li class="y-2006"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','2006_241212','']);">2006</a>
+					</li>
+					<li class="y-2007"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','2007_241212','']);">2007</a>
+					</li>
+					<li class="y-2013"><a href="javascript:;" onClick="_gaq.push(['_trackEvent','Journey','2013_241212','']);">2013</a>
+					</li>
+			</ul>
+	</div>
+
+timeline krijgt een class change als er op een jaartal geklikt of via de dias genavigeerd wordt waardoor de timeline de class van dat jaartal krijgt waardoor die
+groeit of krimpt.
+
+door naar beneden te scrollen wordt de waarde "left: x%" steedts kleiner tot in het negatieve
+als er verder wordt gescrolled wordt de opacity vermindert todat hij uit het scherm is en unrendered
+
+Wordt verstop met css en daarna show met jquery en op zijn plaatse bewogen over een tijdspan.
+.flexslider1 img.car {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 70px;
+    right: -400px;
+}
