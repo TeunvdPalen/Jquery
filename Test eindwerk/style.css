@@ -1,0 +1,45 @@
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* header {
+	position: fixed;
+	top: 0;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+} */
+
+#wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+#mask {
+	width: 500%;
+}
+
+.item {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+.content {
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.selected {
+	background: #fff;
+	font-weight: 700;
+}
+
+.clear {
+	clear: both;
+}
